@@ -108,4 +108,10 @@ class Keyboard {
         }
         return retArr;
     }
+
+    resize(newScale, newX, newY) {
+        this.scale = newScale;
+        this.x = newX - 4.5 * this.scale;
+        this.y = newY - 1 * this.scale;
+    }
 }

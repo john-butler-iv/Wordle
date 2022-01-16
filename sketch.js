@@ -10,20 +10,24 @@ let BACKGROUND_COLOR = '#505050';
 let restart;
 
 function setup() {
-    SCALE = 1000;
+    setScale();
+    setupCore();
+    createCanvas(windowWidth, windowHeight);
+    noLoop();
+}
+
+function setScale() {
+    SCALE = windowHeight * 4 / 3;
     GUESS_SCALE = SCALE * 3 / 40;
     KEYBOARD_SCALE = SCALE / 20;
     SPACING = GUESS_SCALE / 10;
 
-    x0 = SCALE / 2 - 2.5 * GUESS_SCALE;
+    x0 = windowWidth / 2 - 2.5 * GUESS_SCALE;
     y0 = 0.5 * GUESS_SCALE;
-
-    noLoop();
-    setupCore();
-    createCanvas(SCALE, GUESS_SCALE * 6 + 3 * SCALE / 10);
 }
+
 function setupCore() {
-    keyboard = new Keyboard(pickWord(), KEYBOARD_SCALE, SCALE / 2, GUESS_SCALE * 7.125);
+    keyboard = new Keyboard(pickWord(), KEYBOARD_SCALE, windowWidth / 2, GUESS_SCALE * 7.125);
 
     guesses = []
     currWord = ""
@@ -114,4 +118,10 @@ function keyReleased() {
         }
     }
     draw();
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    setScale();
+    keyboard.resize(KEYBOARD_SCALE, windowWidth / 2, GUESS_SCALE * 7.125);
 }
