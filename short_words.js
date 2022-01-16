@@ -600,6 +600,7 @@ let VALID_WORDS = [
     'CASTS',
     'CATCH',
     'CATER',
+    'CATTY',
     'CAUSE',
     'CAVED',
     'CAVER',

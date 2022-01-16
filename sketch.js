@@ -63,16 +63,17 @@ function displayGuesses() {
         // I'm having no issues with speed though, so I don't want to bother.
         drawWord(guesses[i], x0, i * GUESS_SCALE + y0, keyboard.getColors(guesses[i]));
     }
-    if (guesses.length >= 6 && guesses[guesses.length] !== keyboard.word) {
-        drawWord(keyboard.word, x0, 7 * GUESS_SCALE + 3 * KEYBOARD_SCALE);
-        return;
-    }
+    if (guesses.length === 6) {
+        if (guesses[guesses.length - 1] !== keyboard.word)
+            drawWord(keyboard.word, x0, 7 * GUESS_SCALE + 3 * KEYBOARD_SCALE);
+    } else {
 
-    drawWord(currWord, x0, i * GUESS_SCALE + y0);
+        drawWord(currWord, x0, i * GUESS_SCALE + y0);
 
-    noFill();
-    for (i = guesses.length + 1; i < 6; i++) {
-        drawWord('', x0, i * GUESS_SCALE + y0);
+        noFill();
+        for (i = guesses.length + 1; i < 6; i++) {
+            drawWord('', x0, i * GUESS_SCALE + y0);
+        }
     }
 }
 /**

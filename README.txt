@@ -10,3 +10,6 @@ you can guess a word by typing it and hitting enter (only valid 5-letter words w
 Letters not used in hidden word will be gray, letters in the right spot will be green, and if they're in the wrong spot, they'll be orange.
 You will be shown the word if you don't correctly guess in 6 tries.
 After the games's over, you can start a new one by pressing enter.
+
+Letters can appear more than once in a word, so just because you see that a letter is green, it doesn't mean that it won't be somewhere else.
+Let's say, that the hidden word is 'TRAPS' and you guess 'GUESS'. In the original Wordle, the first S in 'GUESS' will be grey since you've already correctly identified all of the S's. My version, however, will show it as an orange letter.
