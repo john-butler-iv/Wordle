@@ -1,3 +1,4 @@
+// list obtained from http://www.mieliestronk.com/wordlist.html
 let VALID_WORDS = [
     'AARON',
     'ABACK',
@@ -1551,6 +1552,7 @@ let VALID_WORDS = [
     'GOFER',
     'GOING',
     'GOLFS',
+    'GOLLY',
     'GONAD',
     'GONGS',
     'GOODS',
